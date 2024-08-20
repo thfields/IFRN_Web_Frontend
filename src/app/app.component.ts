@@ -1,15 +1,36 @@
 import { Component } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import {
+  Router,
+  RouterLink,
+  RouterLinkActive,
+  RouterOutlet,
+} from '@angular/router';
+import { MenuItem } from 'primeng/api';
+import { MenubarModule } from 'primeng/menubar';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, MenubarModule ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'IFRN_Web_Frontend';
+  title = 'projetoapiangular';
+  items: MenuItem[] = [
+    {
+      label: 'Listagem',
+      icon: 'pi pi-home'
+    },
+    {
+      label: 'Novo',
+      icon: 'pi pi-star'
+    },
+    {
+      label: 'Sair',
+      icon: 'pi pi-star'
+    },
+  ];
 
   constructor(private router: Router) {}
 
@@ -19,11 +40,11 @@ export class AppComponent {
     this.router.navigate(['/login']);
   }
 
-  isAuthentucated(): boolean {
-    if(localStorage.getItem('token')){
+  isAuthenticated(): boolean {
+    if (localStorage.getItem('token')) {
       return true;
     } else {
-      return false
+      return false;
     }
   }
 }

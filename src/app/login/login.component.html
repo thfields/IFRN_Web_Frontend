@@ -1,6 +1,5 @@
 <h1>Login</h1>
-
-<p>Usuario: <input [(ngModel)]="usuario"></p>
-<p>Senha: <input type="password" [(ngModel)]="senha"></p>
-<button (click)="onLogin()">Login</button>
+<p>Usuário: <input pInputText  [(ngModel)]="usuario" /></p>
+<p>Senha: <p-password [(ngModel)]="senha" [toggleMask]="true"/></p>
+<button pButton (click)="onLogin()">Login</button>
 <p>{{ mensagemErro }}</p>

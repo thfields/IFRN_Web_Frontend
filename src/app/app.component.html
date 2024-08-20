@@ -1,10 +1,10 @@
-@if (isAuthentucated()) {
-<h1>Sistema de controle de usuários</h1>
+@if (isAuthenticated()) {
+ <h1>Sistema de controle de usuários</h1>
+ <p-menubar [model]="items" />
 <nav>
-  <a routerLink="/listagem" routerLinkActive="router-link-active">| Listagem |</a>
-  <a routerLink="/novo" routerLinkActive="router-link-active"> Novo |</a>
-  <a href="#" (click)="logoff($event)"> Sair |</a>
+  <a routerLink="/listagem" routerLinkActive="router-link-active">Listagem</a> |
+  <a routerLink="/novo" routerLinkActive="router-link-active">Novo</a> |
+  <a href="#" (click)="logoff($event)">Sair</a>
 </nav>
 }
-
-<router-outlet/>
+<router-outlet />
